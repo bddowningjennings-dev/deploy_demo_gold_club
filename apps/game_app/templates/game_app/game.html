@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Gold hub</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load static %}
+    <link rel='stylesheet' type='text/css' href='{% static "login_app/style.css" %}' />
+  </head>
+  <body>
+    <h1>GAAAAME</h1>
+    <a class="nicebtn login loginmodal-submit" href="/home">Home</a>
+    <a class="nicebtn login loginmodal-submit" href="/all">All Players</a>
+
+    <br><br><br>
+    <br><br><br>
+    
+    <p>{{user.name}}</p>
+    <p>{{user.gold}}</p>
+    <br><br>
+    <p><a href="/game/gmas_house">Visit your Grandma</a><br></p>
+    <p><a href="/game/tire_factory">Visit a tire factory</a><br></p>
+    <p><a href="/game/dance_off">Have a dance off</a><br></p>
+      <br><br><br>
+      <br>
+    {% for activity in activities %}
+      <p>{{activity.user.name}} has {{activity.description}} and gained {{activity.gold_delta}} things</p>
+    {% endfor %}
+    
+    <a class="nicebtn login loginmodal-submit" href="/logout">Logout</a>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Gold hub</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load static %}
+    <link rel='stylesheet' type='text/css' href='{% static "login_app/style.css" %}' />
+  </head>
+  <body>
+    <h1>All</h1>
+    <a class='nicebtn' href="/home">Home</a>
+    <a class='nicebtn' href="/logout">Logout</a>
+
+    <br><br><br>
+    
+    {% for user in users %}
+    <p>:: <a href="/user/{{user.id}}">{{user.name}}</a> :: {{user.gold}}</p>
+    {% endfor %}
+    <br><br><br>
+    
+  </body>
+</html>
